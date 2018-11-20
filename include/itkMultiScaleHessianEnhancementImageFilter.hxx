@@ -83,7 +83,6 @@ MultiScaleHessianEnhancementImageFilter< TInputImage, TOutputImage >
 
   /* Set filters parameters */
   m_HessianFilter->SetNormalizeAcrossScale(true);
-  m_EigenAnalysisFilter->SetDimension(ImageDimension);
   m_EigenAnalysisFilter->OrderEigenValuesBy(this->ConvertType(m_EigenToScalarImageFilter->GetEigenValueOrder()));
 
   /* Connect filters */

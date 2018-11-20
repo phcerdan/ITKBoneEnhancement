@@ -94,7 +94,8 @@ public:
   using FloatType = typename NumericTraits< PixelType >::FloatType;
   using EigenValueArrayType = Vector< FloatType, HessianPixelType::Dimension >;
   using EigenValueImageType = Image< EigenValueArrayType, TInputImage::ImageDimension >;
-  using EigenAnalysisFilterType = SymmetricEigenAnalysisImageFilter< HessianImageType, EigenValueImageType >;
+  using EigenAnalysisFilterType = SymmetricEigenAnalysisFixedDimensionImageFilter<
+    TInputImage::ImageDimension, HessianImageType, EigenValueImageType >;
 
   /** Maximum over scale related type alias. */
   using MaximumAbsoluteValueFilterType = MaximumAbsoluteValueImageFilter< TOutputImage >;
